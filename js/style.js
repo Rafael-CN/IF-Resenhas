@@ -1,85 +1,131 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
-    },
-    containerCenter: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    inputContainer: {
-        width: "80%",
-    },
-    input: {
-        backgroundColor: "white",
-        padding: 10,
-        borderRadius: 10,
-        marginTop: 10,
-    },
+  // Login
+  containerSuperiorAvatar: {
+    backgroundColor: "rgba(173, 126, 148, 0.4)",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 60,
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    width: "100%",
+    position: "absolute",
+    top: 0,
+  },
+  avatarLogo: {
+    width: 140,
+    height: 140,
+    marginBottom: 10,
+  },
+  titleApp: {
+    fontSize: 28,
+    fontFamily: "serif",
+    color: "#fff",
+    fontWeight: "bold",
+  },
 
-    buttonContainer: {
-        width: "60%",
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: 20,
-    },
-    button: {
-        backgroundColor: "#0782F9",
-        width: "100%",
-        padding: 15,
-        borderRadius: 10,
-        alignItems: "center",
-        margin: 10,
-    },
-    buttonText: {
-        color: "#FFFFFF",
-        fontWeight: "700",
-        fontSize: 15,
-    },
-    buttonOutline: {
-        width: "100%",
-        backgroundColor: "#FFFFFF",
-        borderWidth: 2,
-        borderRadius: 10,
-        borderColor: "#0782F9",
-        alignItems: "center",
-        padding: 15,
-        margin: 10,
-    },
-    buttonOutlineText: {
-        color: "#0782F9",
-        fontWeight: "700",
-        fontSize: 15,
-    },
+  inputContainer: {
+    marginTop: 250,
+    width: "80%",
+  },
+  input: {
+    backgroundColor: "rgba(173, 126, 148, 0.3)",
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginTop: 4,
+    borderWidth: 2,
+    borderColor: "#CD9CB2",
+    color: "#fff",
+  },
+  inputPlaceholder: {
+    color: "#CD9CB2",
+  },
+  inputLabel: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#AD7E94",
+  },
 
-    //FLATLIST
-    item: {
-        width: "80%",
-        backgroundColor: "white",
-        borderColor: "#0782F9",
-        borderWidth: 2,
-        borderRadius: 15,
-        padding: 20,
-        marginVertical: 10,
-    },
-    titulo: {
-        fontSize: 16,
-        color: "#0782F9",
-        fontWeight: "500",
-    },
-    imagem: {
-        width: 150,
-        height: 150,
-        borderRadius: 150 / 2,
-        alignSelf: "center",
-        marginTop: 15,
-    },
-    imagemView: {
-        alignContent: "center",
-        alignItems: "center",
-        marginBottom: 40,
-    },
+  buttonContainer: {
+    width: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 100,
+  },
+  button: {
+    backgroundColor: "#8F6277",
+    width: "100%",
+    padding: 15,
+    borderRadius: 50,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontWeight: "Bold",
+    fontSize: 16,
+  },
+  registerText: {
+    marginTop: 15,
+    textAlign: "center",
+    fontSize: 14,
+    color: "#AD7E94",
+  },
+  registerLink: {
+    color: "#8F6277",
+    fontWeight: "bold",
+  },
+  distancia: {
+    margimTop: 30,
+  },
+  logoutIconContainer: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+    zIndex: 1,
+  },
+  // prof
+  container: {
+    flex: 1,
+    alignItems: "center",
+  },
+  containerCenter: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FED2E5",
+  },
+
+  //FLATLIST
+  item: {
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#FFE1EE",
+    borderRadius: 10,
+    padding: 10,
+    marginVertical: 8,
+    width: "90%",
+    // alignSelf: "center",
+    borderColor: "#CD9CB2D9",
+    borderWidth: 2,
+  },
+  titulo: {
+    fontSize: 14,
+    color: "#8F6277",
+    marginBottom: 4,
+    flexWrap: "wrap",
+  },
+  imagem: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+    backgroundColor: "#AD7E944D",
+    marginTop: 15,
+  },
+  imagemView: {
+    alignContent: "center",
+    alignItems: "center",
+    marginBottom: 40,
+  },
 });
