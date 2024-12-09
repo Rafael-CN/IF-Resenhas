@@ -57,6 +57,7 @@ export default StyleSheet.create({
 
     //FLATLIST
     item: {
+        width: "80%",
         backgroundColor: "white",
         borderColor: "#0782F9",
         borderWidth: 2,
@@ -65,7 +66,7 @@ export default StyleSheet.create({
         marginVertical: 10,
     },
     titulo: {
-        fontSize: 18,
+        fontSize: 16,
         color: "#0782F9",
         fontWeight: "500",
     },
@@ -73,6 +74,8 @@ export default StyleSheet.create({
         width: 150,
         height: 150,
         borderRadius: 150 / 2,
+        alignSelf: "center",
+        marginTop: 15,
     },
     imagemView: {
         alignContent: "center",
