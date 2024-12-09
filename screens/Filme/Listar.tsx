@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator, Image } from "react-native";
+import { View, Text, ActivityIndicator, Image, ImageStyle } from "react-native";
 import React, { useEffect, useState } from "react";
 import { auth, firestore } from "../../js/firebase";
 import { Filme } from "../../model/Filme";
@@ -37,7 +37,7 @@ const Listar = () => {
                     <Text style={style.titulo}>Gênero: {item.genero}</Text>
                     <Text style={style.titulo}>Sinopse: {item.sinopse}</Text>
                     <Text style={style.titulo}>Data de lançamento: {item.datalancamento}</Text>
-                    <Image source={{ uri: item.urlfoto }} style={style.imagem} />
+                    <Image source={{ uri: item.urlfoto }} style={style.imagem as ImageStyle} />
                 </View>
             ))}
         </ScrollView>

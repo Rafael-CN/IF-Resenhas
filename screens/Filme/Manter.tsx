@@ -1,4 +1,4 @@
-import { View, Alert, Text, TextInput, TouchableOpacity, Pressable, Image, ActivityIndicator } from "react-native";
+import { View, Alert, Text, TextInput, TouchableOpacity, Pressable, Image, ActivityIndicator, ImageStyle } from "react-native";
 import { auth, firestore, storage } from "../../js/firebase";
 import { ScrollView } from "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
@@ -157,7 +157,7 @@ const Manter = () => {
             <View style={style.inputContainer}>
                 <Pressable onPress={() => selecionaFoto()}>
                     <View style={style.imagemView}>
-                        <Image source={{ uri: imagePath }} style={style.imagem} />
+                        <Image source={{ uri: imagePath }} style={style.imagem as ImageStyle} />
                     </View>
                 </Pressable>
 
@@ -221,7 +221,7 @@ const Manter = () => {
                     <Text style={style.titulo}>Gênero: {item.genero}</Text>
                     <Text style={style.titulo}>Sinopse: {item.sinopse}</Text>
                     <Text style={style.titulo}>Data de lançamento: {item.datalancamento}</Text>
-                    <Image source={{ uri: item.urlfoto }} style={style.imagem} />
+                    <Image source={{ uri: item.urlfoto }} style={style.imagem as ImageStyle} />
                 </TouchableOpacity>
             ))}
         </ScrollView>

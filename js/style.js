@@ -69,6 +69,21 @@ export default StyleSheet.create({
         fontWeight: "Bold",
         fontSize: 16,
     },
+    buttonOutline: {
+        width: "100%",
+        backgroundColor: "#FFFFFF",
+        borderWidth: 2,
+        borderRadius: 10,
+        borderColor: "#0782F9",
+        alignItems: "center",
+        padding: 15,
+        margin: 10,
+    },
+    buttonOutlineText: {
+        color: "#0782F9",
+        fontWeight: "700",
+        fontSize: 15,
+    },
     registerText: {
         marginTop: 15,
         textAlign: "center",
