@@ -45,7 +45,7 @@ const Listar = () => {
     }
 
     return (
-        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+        <ScrollView endFillColor="#FED2E5" contentContainerStyle={style.scrollContainer}>
             {cenas.map((item, i) => (
                 <View key={i} style={style.item}>
                     <Text style={style.titulo}>Filme: {filmes.find((f) => f.id === item.idFilme).titulo}</Text>

@@ -106,7 +106,7 @@ const Manter = () => {
     };
 
     return (
-        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+        <ScrollView endFillColor="#FED2E5" contentContainerStyle={style.scrollContainer}>
             <View style={style.inputContainer}>
                 <Picker
                     placeholder={{ label: "Selecione um filme...", color: "#666", value: 0 }}

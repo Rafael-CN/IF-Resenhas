@@ -1,6 +1,6 @@
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import Resenha from "./Resenha";
 import Filme from "./Filme";
 import Home from "./Home";
@@ -9,13 +9,17 @@ import React from "react";
 
 const Drawer = createDrawerNavigator();
 
-const CDrawerItem = (props: { name: string; icon: string; navigation: any; state: any }) => <DrawerItem focused={props.state.routeNames[props.state.index] === props.name} label={props.name} icon={(iconProps) => <Icon name={props.icon} {...iconProps} />} onPress={() => props.navigation.navigate(props.name)} />;
+function CDrawerItem(props: { name: string; icon: string; navigation: any; state: any }) {
+    return <DrawerItem inactiveTintColor="#CD9CB2" activeTintColor="#FFE1EE" activeBackgroundColor="#8F6277" focused={props.state.routeNames[props.state.index] === props.name} label={props.name} icon={(iconProps) => <Icon name={props.icon} {...iconProps} />} onPress={() => props.navigation.navigate(props.name)} />;
+}
+
 function CDrawerContent(props: DrawerContentComponentProps) {
     return (
-        <DrawerContentScrollView {...props}>
+        <DrawerContentScrollView {...props} style={{ backgroundColor: "#FFE1EE" }}>
             <CDrawerItem name="Página Inicial" icon="home" {...props} />
 
             <Text style={styles.sectionTitle}>Filmes</Text>
+
             <CDrawerItem name="Adicionar filmes" icon="filmstrip-box" {...props} />
             <CDrawerItem name="Listar filmes" icon="filmstrip-box-multiple" {...props} />
 
@@ -37,13 +41,8 @@ export default function Menu() {
             drawerContent={(props) => CDrawerContent(props)}
             screenOptions={{
                 headerShown: true,
-                drawerStyle: {
-                    backgroundColor: "#f9f9f9",
-                    width: 250,
-                },
-                drawerLabelStyle: {
-                    fontSize: 16,
-                },
+                headerStyle: { backgroundColor: "#8F6277" },
+                headerTintColor: "#FFE1EE",
             }}
         >
             <Drawer.Screen name="Página Inicial" component={Home} />
@@ -58,20 +57,11 @@ export default function Menu() {
 }
 
 const styles = StyleSheet.create({
-    drawerTitle: {
-        backgroundColor: "#ddd",
-        marginVertical: 5,
-    },
-    drawerTitleText: {
-        fontSize: 18,
-        fontWeight: "bold",
-        textAlign: "center",
-    },
     sectionTitle: {
         fontSize: 16,
-        fontWeight: "bold",
-        marginLeft: 20,
-        marginTop: 10,
-        marginBottom: 5,
+        paddingLeft: 20,
+        paddingVertical: 10,
+        fontWeight: "900",
+        color: "#8F6277",
     },
 });
