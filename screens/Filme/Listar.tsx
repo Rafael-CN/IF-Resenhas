@@ -30,7 +30,7 @@ const Listar = () => {
     }
 
     return (
-        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+        <ScrollView endFillColor="#FED2E5" contentContainerStyle={style.scrollContainer}>
             {filmes.map((item, i) => (
                 <View key={i} style={style.item}>
                     <Text style={style.titulo}>Título: {item.titulo}</Text>

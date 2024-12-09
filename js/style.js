@@ -71,16 +71,16 @@ export default StyleSheet.create({
     },
     buttonOutline: {
         width: "100%",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#FFE1EE",
         borderWidth: 2,
-        borderRadius: 10,
-        borderColor: "#0782F9",
+        borderRadius: 50,
+        borderColor: "#8F6277",
         alignItems: "center",
         padding: 15,
         margin: 10,
     },
     buttonOutlineText: {
-        color: "#0782F9",
+        color: "#8F6277",
         fontWeight: "700",
         fontSize: 15,
     },
@@ -104,8 +104,7 @@ export default StyleSheet.create({
         zIndex: 1,
     },
     // prof
-    container: {
-        flex: 1,
+    scrollContainer: {
         alignItems: "center",
         backgroundColor: "#FED2E5",
     },
@@ -124,8 +123,7 @@ export default StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         marginVertical: 8,
-        width: "90%",
-        // alignSelf: "center",
+        width: "80%",
         borderColor: "#CD9CB2D9",
         borderWidth: 2,
     },
@@ -136,10 +134,9 @@ export default StyleSheet.create({
         flexWrap: "wrap",
     },
     imagem: {
-        width: 60,
-        height: 60,
+        width: 120,
+        height: 120,
         borderRadius: 8,
-        backgroundColor: "#AD7E944D",
         marginTop: 15,
     },
     imagemView: {

@@ -163,7 +163,7 @@ const Manter = () => {
     };
 
     return (
-        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+        <ScrollView endFillColor="#FED2E5" contentContainerStyle={style.scrollContainer}>
             <View style={style.inputContainer}>
                 <Pressable onPress={() => selecionaFoto()}>
                     <View style={style.imagemView}>
