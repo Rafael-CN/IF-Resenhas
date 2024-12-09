@@ -1,17 +1,33 @@
 import { View, Text, ActivityIndicator, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import { auth, firestore } from "../../js/firebase";
-import { Filme } from "../../model/Filme";
+import { Cena } from "../../model/Cena";
 import style from "../../js/style";
 import { ScrollView } from "react-native-gesture-handler";
+import { Filme } from "../../model/Filme";
 
 const Listar = () => {
     const [loading, setLoading] = useState(true);
-    const [filmes, setFilmes] = useState<Filme[]>([]);
+    const [cenas, setCenas] = useState<Cena[]>([]);
 
+    const refCena = firestore.collection("Usuario").doc(auth.currentUser?.uid).collection("Cena");
+
+    const [filmes, setFilmes] = useState<Filme[]>([]);
     const refFilme = firestore.collection("Usuario").doc(auth.currentUser?.uid).collection("Filme");
 
     useEffect(() => {
+        refCena.onSnapshot((querySnapshot) => {
+            const cenas: any[] = [];
+            querySnapshot.forEach((documentSnapshot) => {
+                cenas.push({
+                    ...documentSnapshot.data(),
+                    key: documentSnapshot.id,
+                });
+            });
+            setCenas(cenas);
+            setLoading(false);
+        });
+
         refFilme.onSnapshot((querySnapshot) => {
             const filmes: any[] = [];
             querySnapshot.forEach((documentSnapshot) => {
@@ -21,9 +37,8 @@ const Listar = () => {
                 });
             });
             setFilmes(filmes);
-            setLoading(false);
         });
-    }, []);
+    });
 
     if (loading) {
         return <ActivityIndicator size={60} color="#0782F9" />;
@@ -31,12 +46,13 @@ const Listar = () => {
 
     return (
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
-            {filmes.map((item, i) => (
+            {cenas.map((item, i) => (
                 <View key={i} style={style.item}>
-                    <Text style={style.titulo}>Título: {item.titulo}</Text>
-                    <Text style={style.titulo}>Gênero: {item.genero}</Text>
-                    <Text style={style.titulo}>Sinopse: {item.sinopse}</Text>
-                    <Text style={style.titulo}>Data de lançamento: {item.datalancamento}</Text>
+                    <Text style={style.titulo}>Filme: {filmes.find((f) => f.id === item.idFilme).titulo}</Text>
+                    <Text style={style.titulo}>Titulo: {item.titulo}</Text>
+                    <Text style={style.titulo}>Descrição: {item.descricao}</Text>
+                    <Text style={style.titulo}>Observação: {item.observacao}</Text>
+                    <Text style={style.titulo}>Estrelas: {item.estrelas}</Text>
                     <Image source={{ uri: item.urlfoto }} style={style.imagem} />
                 </View>
             ))}

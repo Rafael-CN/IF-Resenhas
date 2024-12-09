@@ -1,11 +1,13 @@
-export class Resenha {
+export class Cena {
     public id: string;
     public idFilme: string;
     public titulo: string;
-    public texto: string;
+    public descricao: string;
+    public observacao: string;
     public estrelas: number;
+    public urlfoto: string;
 
-    constructor(obj?: Partial<Resenha>) {
+    constructor(obj?: Partial<Cena>) {
         if (obj) {
             Object.assign(this, obj);
         }
@@ -16,8 +18,10 @@ export class Resenha {
             "id":               "${this.id}",
             "idFilme":          "${this.idFilme}",
             "titulo":           "${this.titulo}",
-            "texto":            "${this.texto}",
+            "descricao":        "${this.descricao}",
+            "observacao":       "${this.observacao}" 
             "estrelas":         "${this.estrelas}",
+            "urlFoto":          "${this.urlfoto}",
         }`;
     }
 
