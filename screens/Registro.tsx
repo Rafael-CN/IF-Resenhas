@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  ImageStyle,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
@@ -45,69 +46,74 @@ const Registro = () => {
       <View style={style.containerSuperiorAvatar}>
         <Image
           source={require("../assets/avatar.png")}
-          style={style.avatarLogo}
+          style={style.avatarLogo as ImageStyle}
         />
         <Text style={style.titleApp}>CineFy</Text>
       </View>
 
-      <View style={style.inputContainer}>
-        <Text style={style.inputLabel}>Nome:</Text>
-        <TextInput
-          style={style.inputLabel}
-          placeholder="Nome"
-          onChangeText={(texto) =>
-            setFormUsuario({
-              ...formUsuario,
-              nome: texto,
-            })
-          }
-          style={style.input}
-        />
-        <Text style={style.inputLabel}>E-mail:</Text>
-        <TextInput
-          placeholder="Email"
-          onChangeText={(texto) =>
-            setFormUsuario({
-              ...formUsuario,
-              email: texto,
-            })
-          }
-          style={style.input}
-        />
-        <Text style={style.inputLabel}>Senha:</Text>
-        <TextInput
-          placeholder="Senha"
-          onChangeText={(texto) =>
-            setFormUsuario({
-              ...formUsuario,
-              senha: texto,
-            })
-          }
-          secureTextEntry
-          style={style.input}
-        />
-        <Text style={style.inputLabel}>Data de Nascimento:</Text>
-        <TextInput
-          placeholder="Data Nascimento"
-          onChangeText={(texto) =>
-            setFormUsuario({
-              ...formUsuario,
-              datanasc: texto,
-            })
-          }
-          style={style.input}
-        />
+      <View style={style.formContainer}>
+        <View style={style.inputContainer}>
+          <View style={style.distancia}>
+            <Text style={style.inputLabel}>Nome:</Text>
+            <TextInput
+              style={style.inputLabel}
+              placeholder="Nome"
+              onChangeText={(texto) =>
+                setFormUsuario({
+                  ...formUsuario,
+                  nome: texto,
+                })
+              }
+              style={style.input}
+            />
+          </View>
+          <View style={style.distancia}>
+            <Text style={style.inputLabel}>E-mail:</Text>
+            <TextInput
+              placeholder="Email"
+              onChangeText={(texto) =>
+                setFormUsuario({
+                  ...formUsuario,
+                  email: texto,
+                })
+              }
+              style={style.input}
+            />
+          </View>
+          <View style={style.distancia}>
+            <Text style={style.inputLabel}>Senha:</Text>
+            <TextInput
+              placeholder="Senha"
+              onChangeText={(texto) =>
+                setFormUsuario({
+                  ...formUsuario,
+                  senha: texto,
+                })
+              }
+              secureTextEntry
+              style={style.input}
+            />
+          </View>
+          <View style={style.distancia}>
+            <Text style={style.inputLabel}>Data de Nascimento:</Text>
+            <TextInput
+              placeholder="Data Nascimento"
+              onChangeText={(texto) =>
+                setFormUsuario({
+                  ...formUsuario,
+                  datanasc: texto,
+                })
+              }
+              style={style.input}
+            />
+          </View>
+        </View>
+        <View style={style.buttonContainer}>
+          <TouchableOpacity style={style.button} onPress={handleSignUp}>
+            <Text style={style.buttonText}>Registrar</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={style.buttonContainer}>
-        <TouchableOpacity style={style.button} onPress={handleSignUp}>
-          <Text style={style.buttonText}>Registrar</Text>
-        </TouchableOpacity>
-      </View>
-      <Text
-        style={style.registerText}
-        onPress={() => navigation.navigate("Login")}>
-        Já tem uma conta? <Text style={style.registerLink}>Entrar</Text>
-      </Text>
     </KeyboardAvoidingView>
   );
 };

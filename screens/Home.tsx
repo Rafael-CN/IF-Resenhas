@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { auth } from "../js/firebase";
@@ -14,12 +14,24 @@ const Home = () => {
   };
 
   return (
-    <View style={style.logoutIconContainer}>
-      <TouchableOpacity onPress={handleSignOut}>
-        <Icon name="door-open" size={30} color="#fff" />
-      </TouchableOpacity>
+    <View style={style.containerHome}>
+      <View style={style.rectangle}>
+        <Text style={style.cinefyText}>Cinefy</Text>
+      </View>
+      <View style={{ marginTop: 70 }}>
+        <Image
+          source={require("../assets/avatar.png")}
+          style={style.avatarImage}
+        />
+        <Text style={style.textBelowAvatar}>Imortalize a magia de</Text>
+        <Text style={style.textBelowAvatar}>cada filme</Text>
+      </View>
+      <View style={style.logoutIconContainer}>
+        <TouchableOpacity onPress={handleSignOut}>
+          <Icon name="door-open" size={50} color="#8F6277" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
-
 export default Home;
