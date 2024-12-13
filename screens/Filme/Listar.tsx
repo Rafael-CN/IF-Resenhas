@@ -4,6 +4,7 @@ import { auth, firestore } from "../../js/firebase";
 import { Filme } from "../../model/Filme";
 import style from "../../js/style";
 import { ScrollView } from "react-native-gesture-handler";
+import { Loading } from "../../components";
 
 const Listar = () => {
     const [loading, setLoading] = useState(true);
@@ -26,7 +27,7 @@ const Listar = () => {
     }, []);
 
     if (loading) {
-        return <ActivityIndicator size={60} color="#0782F9" />;
+        return <Loading />;
     }
 
     return (

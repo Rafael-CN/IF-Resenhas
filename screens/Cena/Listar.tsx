@@ -5,6 +5,7 @@ import { Cena } from "../../model/Cena";
 import style from "../../js/style";
 import { ScrollView } from "react-native-gesture-handler";
 import { Filme } from "../../model/Filme";
+import { Loading } from "../../components";
 
 const Listar = () => {
     const [loading, setLoading] = useState(true);
@@ -41,14 +42,14 @@ const Listar = () => {
     });
 
     if (loading) {
-        return <ActivityIndicator size={60} color="#0782F9" />;
+        return <Loading />;
     }
 
     return (
         <ScrollView endFillColor="#FED2E5" contentContainerStyle={style.scrollContainer}>
             {cenas.map((item, i) => (
                 <View key={i} style={style.item}>
-                    <Text style={style.titulo}>Filme: {filmes.find((f) => f.id === item.idFilme).titulo}</Text>
+                    <Text style={style.titulo}>Filme: {filmes.find((f) => f.id === item.idFilme)?.titulo || ""}</Text>
                     <Text style={style.titulo}>Titulo: {item.titulo}</Text>
                     <Text style={style.titulo}>Descrição: {item.descricao}</Text>
                     <Text style={style.titulo}>Observação: {item.observacao}</Text>

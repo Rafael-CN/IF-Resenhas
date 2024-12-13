@@ -13,7 +13,6 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: "#8F6277" }, headerTintColor: "#FFF" }}>
                 <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Registro" component={Registro} />
                 <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
             </Stack.Navigator>
